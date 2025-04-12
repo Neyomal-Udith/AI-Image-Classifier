@@ -1,0 +1,208 @@
+/* F1 Theme Variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --f1-dark-bg: #1F1F1F; /* Dark background */
+    --f1-card-bg: #2a2a2a; /* Slightly lighter card/element background */
+    --f1-border-color: #444444; /* Subtle border color */
+    --f1-text-primary: #E0E0E0; /* Primary text color (off-white) */
+    --f1-text-secondary: #AAAAAA; /* Secondary text color (gray) */
+    --f1-accent-red: #D50000; /* Racing red accent */
+    --f1-accent-red-darker: #A00000; /* Darker red for hover states */
+    --f1-font: 'poppins' /* Chosen F1-style font */
+}
+
+/* General Body Styling */
+body {
+    font-family: var(--f1-font);
+    background-color: var(--f1-dark-bg);
+    color: var(--f1-text-primary);
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #111111 !important; /* Even darker for navbar, override Bootstrap */
+    border-bottom: 3px solid var(--f1-accent-red);
+}
+
+.navbar-brand {
+    color: var(--f1-text-primary) !important; /* Override Bootstrap */
+    font-weight: 700; /* Bolder title */
+    font-size: 1.5rem;
+}
+
+/* Container Adjustments */
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Card Styling */
+.card-wrapper {
+    margin: 3% 0; /* Reduced margin slightly */
+}
+
+.card {
+    background-color: var(--f1-card-bg);
+    border: 1px solid var(--f1-border-color) !important; /* Use important to override Bootstrap border-0 */
+    border-radius: 8px; /* Slightly rounded corners */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(213, 0, 0, 0.3); /* Red glow on hover */
+}
+
+/* Circular Image Styling */
+.custom-circle-image {
+    width: 10vw; /* Kept responsive */
+    height: 10vw;
+    min-width: 100px; /* Minimum size */
+    min-height: 100px; /* Minimum size */
+    border: 3px solid var(--f1-accent-red); /* Red border around image */
+    background-color: var(--f1-dark-bg); /* Background if image doesn't load */
+}
+
+.custom-circle-image img {
+    object-fit: cover;
+}
+
+/* Card Title Styling */
+.card-title {
+    letter-spacing: 1.1px;
+    color: var(--f1-text-primary);
+    font-weight: 600;
+    /* Remove the empty p tag styling */
+}
+
+/* Dropzone Styling */
+.dropzone {
+    border: 2px dashed var(--f1-accent-red);
+    background-color: rgba(255, 255, 255, 0.03); /* Very subtle light background */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.dropzone .dz-message {
+    color: var(--f1-text-secondary);
+    font-weight: 600;
+}
+
+.dropzone .dz-message .note {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--f1-text-secondary);
+}
+
+.dropzone img {
+    filter: invert(70%) sepia(1) saturate(10000%) hue-rotate(320deg); /* Try to color the upload icon red */
+    opacity: 0.8;
+}
+
+/* Button Styling */
+#submitBtn {
+    background-color: var(--f1-accent-red);
+    border-color: var(--f1-accent-red);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#submitBtn:hover {
+    background-color: var(--f1-accent-red-darker);
+    border-color: var(--f1-accent-red-darker);
+}
+
+/* Error Message Styling */
+.error {
+    font-size: 1.2rem; /* Adjusted size */
+    line-height: 1.5;
+    color: #FF4136; /* A slightly different red for errors */
+    text-align: center;
+    background-color: rgba(255, 65, 54, 0.1); /* Faint red background */
+    border: 1px solid #FF4136;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 15px; /* Add some space */
+    display: none; /* Keep hidden initially as per original logic */
+}
+
+.error p {
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+
+/* Result Table Styling */
+#classTable {
+    font-family: var(--f1-font); /* Ensures table uses the theme font */
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px; /* Add space above table */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+#classTable td,
+#classTable th {
+    border: 1px solid var(--f1-border-color);
+    padding: 10px 12px; /* Slightly more padding */
+    text-align: left;
+}
+
+#classTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: var(--f1-accent-red);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase; /* Uppercase headers */
+    letter-spacing: 0.5px;
+}
+
+#classTable tr {
+    background-color: var(--f1-card-bg); /* Match card background */
+    color: var(--f1-text-primary);
+}
+
+#classTable tr:nth-child(even) {
+    background-color: #333333; /* Slightly different shade for zebra striping */
+}
+
+#classTable tr:hover {
+    background-color: #404040; /* Hover effect for rows */
+}
+
+/* Result Holder Styling (where the image might appear) */
+#resultHolder img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--f1-accent-red);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Hide elements initially like the original */
+#error, #divClassTable, #resultHolder {
+    display: none;
+}
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
+    .custom-circle-image {
+        width: 25vw;
+        height: 25vw;
+        min-width: 80px;
+        min-height: 80px;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    .dropzone {
+      margin-bottom: 20px; /* Add space below dropzone on small screens */
+    }
+    #classTable td,
+    #classTable th {
+      padding: 8px; /* Reduce padding slightly */
+    }
+}
